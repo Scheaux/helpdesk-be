@@ -1,6 +1,6 @@
 const http = require('http');
 const Koa = require('koa');
-const cors = require('koa-cors');
+const cors = require('@koa/cors');
 const koaBody = require('koa-body');
 
 const app = new Koa();
@@ -63,5 +63,7 @@ app.use(async (ctx) => {
   }
 });
 
-const port = process.env.PORT || 7070;
-const server = http.createServer(app.callback()).listen(port);
+const port = process.env.PORT || 7777;
+// const server = http.createServer(app.callback()).listen(port);
+app.listen(port);
+console.log(`listening on port: ${port}`);
